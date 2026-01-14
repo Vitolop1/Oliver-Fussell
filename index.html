@@ -238,16 +238,19 @@
             margin-top: 14px;
         }
 
-        .profilePhoto {
+        /* FOTO HONOURS (más chica y encapsulada) */
+        .honoursPhoto {
             width: 100%;
+            max-width: 320px; /* más chica que profile */
             height: auto;
             object-fit: cover;
-            border-radius: 18px;
+            border-radius: 16px;
             border: 2px solid var(--line);
-            box-shadow: 0 15px 30px rgba(0,0,0,.12);
-            background: #fff;
+            box-shadow: 0 12px 24px rgba(0,0,0,.10);
             display: block;
+            margin: auto;
         }
+
         /* FOTO HONOURS (más chica y encapsulada) */
         .honoursPhoto {
             width: 100%;
@@ -279,20 +282,28 @@
                 margin: auto;
             }
         }
+        /* HONOURS: foto encapsulada dentro de "burbuja" y más chica */
+        .honoursPhotoCard {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            padding: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-        /* ✅ HONOURS PHOTO (encapsulada y más chica) */
         .honoursPhoto {
             width: 100%;
-            max-width: 360px;
+            max-width: 320px; /* más chica */
             height: auto;
             object-fit: cover;
-            border-radius: 18px;
+            border-radius: 14px;
             border: 2px solid var(--line);
-            box-shadow: 0 15px 30px rgba(0,0,0,.12);
-            background: #fff;
+            box-shadow: 0 12px 24px rgba(0,0,0,.10);
             display: block;
-            justify-self: end;
         }
+
 
         @media (max-width:900px) {
             .honoursPhoto {
@@ -644,15 +655,15 @@
             </div>
         </section>
 
-        <!-- HONOURS (CON FOTO A LA DERECHA, MÁS CHICA) -->
-        <section id="honours" class="section">
+        <!-- HONOURS (TODO ADENTRO DE LA BURBUJA + FOTO A LA DERECHA) -->
+        <section id="honours" class="section card">
             <div class="sectionTitle">
                 <h3>🏆 Honours</h3>
                 <p class="hint">Representative teams & awards</p>
             </div>
 
             <div class="profileLayout">
-                <!-- TEXTO -->
+                <!-- INFO -->
                 <div class="facts" style="margin-top:0;">
                     <div class="fact"><b>South West of England U18</b><span></span></div>
                     <div class="fact"><b>South East Bears All Stars</b><span>2022 • 2023 • 2024</span></div>
@@ -661,13 +672,13 @@
                     <div class="fact"><b>All American France Centennial Tour</b><span>2024</span></div>
                 </div>
 
-                <!-- FOTO DERECHA (encapsulada y más chica) -->
-                <div class="card" style="margin-top:0; display:flex; justify-content:center; align-items:center;">
-                    <img class="honoursPhoto" src="assets/OLIVER_HONOURS.png" alt="Oliver Fussell honours photo">
+                <!-- FOTO DERECHA (ENCAPSULADA Y MÁS CHICA) -->
+                <div class="honoursPhotoCard">
+                    <img class="honoursPhoto" src="assets/OLIVER_HONOURS.PNG" alt="Oliver Fussell honours photo">
                 </div>
             </div>
-            </div>
         </section>
+
 
         <!-- HIGHLIGHTS -->
         <section id="highlights" class="section">
@@ -677,8 +688,7 @@
             </div>
 
             <div class="videoWrap" style="padding:0; aspect-ratio:16/9;">
-                <iframe   
-                        src="https://www.youtube.com/embed/6lSgfpm6TLs"
+                <iframe src="https://www.youtube.com/embed/6lSgfpm6TLs"
                         title="Oliver Fussell Rugby Highlights"
                         frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
