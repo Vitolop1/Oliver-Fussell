@@ -248,6 +248,25 @@
             background: #fff;
             display: block;
         }
+        .honoursPhoto {
+            width: 100%;
+            max-width: 320px; /* más chica */
+            height: auto;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid var(--line);
+            box-shadow: 0 15px 30px rgba(0,0,0,.12);
+            background: #fff;
+            display: block;
+            justify-self: end; /* pegada a la derecha en desktop */
+        }
+
+        @media (max-width:900px) {
+            .honoursPhoto {
+                justify-self: center;
+                max-width: 420px;
+            }
+        }
 
         @media (max-width:900px) {
             .profileLayout {
