@@ -248,18 +248,19 @@
             background: #fff;
             display: block;
         }
+        /* FOTO HONOURS (más chica y encapsulada) */
         .honoursPhoto {
             width: 100%;
-            max-width: 320px; /* más chica */
+            max-width: 320px; /* más chica que profile */
             height: auto;
             object-fit: cover;
-            border-radius: 18px;
+            border-radius: 16px;
             border: 2px solid var(--line);
-            box-shadow: 0 15px 30px rgba(0,0,0,.12);
-            background: #fff;
+            box-shadow: 0 12px 24px rgba(0,0,0,.10);
             display: block;
-            justify-self: end; /* pegada a la derecha en desktop */
+            margin: auto;
         }
+
 
         @media (max-width:900px) {
             .honoursPhoto {
@@ -661,7 +662,10 @@
                 </div>
 
                 <!-- FOTO DERECHA (encapsulada y más chica) -->
-                <img class="honoursPhoto" src="assets/OLIVER_HONOURS.png" alt="Oliver Fussell honours photo">
+                <div class="card" style="margin-top:0; display:flex; justify-content:center; align-items:center;">
+                    <img class="honoursPhoto" src="assets/OLIVER_HONOURS.PNG" alt="Oliver Fussell honours photo">
+                </div>
+            </div>
             </div>
         </section>
 
