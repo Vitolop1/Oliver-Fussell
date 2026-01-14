@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
     <title>Oliver Fussell | Rugby Highlights & Player Profile</title>
     <meta name="description" content="Oliver Fussell rugby highlights, player profile, Centre/Fly Half, honours, strengths, and contact." />
 
@@ -13,7 +14,7 @@
             --text: #0f172a;
             --muted: #475569;
             --line: #dbe2ea;
-            --accent: #6cb4e4;
+            --accent: #6cb4e4; /* light blue */
         }
 
         * {
@@ -205,7 +206,6 @@
             margin: 0;
         }
 
-        /* FACTS */
         .facts {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -235,7 +235,6 @@
                 word-break: break-word;
             }
 
-        /* PROFILE */
         .profileLayout {
             display: grid;
             grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
@@ -266,7 +265,27 @@
             }
         }
 
-        /* QUICK SNAPSHOT */
+        /* ✅ HONOURS PHOTO (encapsulada y más chica) */
+        .honoursPhoto {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 18px;
+            border: 2px solid var(--line);
+            box-shadow: 0 15px 30px rgba(0,0,0,.12);
+            background: #fff;
+            display: block;
+            justify-self: end;
+        }
+
+        @media (max-width:900px) {
+            .honoursPhoto {
+                max-width: 420px;
+                justify-self: center;
+            }
+        }
+
         .miniFacts {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -295,7 +314,6 @@
                 word-break: break-word;
             }
 
-        /* KPI / STRENGTHS */
         .kpiGrid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -324,7 +342,6 @@
                 line-height: 1.5;
             }
 
-        /* POSITIONS */
         .positionsGrid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -381,7 +398,6 @@
                 margin: 8px 0;
             }
 
-        /* BADGES */
         .badgeRow {
             display: flex;
             flex-wrap: wrap;
@@ -399,21 +415,6 @@
             font-weight: 900;
         }
 
-        /* GRID2 */
-        .grid2 {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-            align-items: start;
-        }
-
-        @media (max-width:900px) {
-            .grid2 {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* VIDEO */
         .videoWrap {
             border: 1px solid var(--line);
             border-radius: 16px;
@@ -421,23 +422,6 @@
             background: #fff;
         }
 
-        /* GALLERY */
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 14px;
-        }
-
-            .gallery img {
-                width: 100%;
-                height: 260px;
-                object-fit: cover;
-                border-radius: 16px;
-                border: 1px solid var(--line);
-                background: #fff;
-            }
-
-        /* CONTACT */
         .contactBox {
             display: flex;
             flex-wrap: wrap;
@@ -483,7 +467,6 @@
                 <a href="#positions">Positions</a>
                 <a href="#honours">Honours</a>
                 <a href="#highlights">Highlights</a>
-                <a href="#gallery">Gallery</a>
                 <a href="#references">References</a>
                 <a href="#contact">Contact</a>
             </div>
@@ -496,9 +479,9 @@
                 <div>
                     <h2>Oliver Fussell</h2>
                     <p>
-                        English Centre / Fly Half with high-level competition experience and strong leadership.
-                        Tactical awareness, adaptable game management, and consistent organization of defensive lines and attacking shape.
-                        Proven ability to break the gain line and create opportunities for the team.
+                        Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
+                        consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
+                        and create opportunities for the team.
                     </p>
 
                     <div class="btnRow">
@@ -507,8 +490,8 @@
                     </div>
 
                     <div class="badgeRow">
-                        <span class="badge">Centre (12/13)</span>
-                        <span class="badge">Fly Half (10)</span>
+                        <span class="badge">Centre</span>
+                        <span class="badge">Fly Half</span>
                         <span class="badge">Leadership</span>
                         <span class="badge">Game Management</span>
                         <span class="badge">Tactical Kicking</span>
@@ -522,14 +505,14 @@
                     </div>
 
                     <div class="miniFacts">
+                        <div class="miniFact"><b>Full Name</b><span>Oliver Fussell</span></div>
                         <div class="miniFact"><b>Date of Birth</b><span>05/05/2004</span></div>
                         <div class="miniFact"><b>Age</b><span>21</span></div>
                         <div class="miniFact"><b>Nationality</b><span>English</span></div>
                         <div class="miniFact"><b>College</b><span>Belmont Abbey College</span></div>
                         <div class="miniFact"><b>Position</b><span>Centre / Fly Half</span></div>
-                        <div class="miniFact"><b>Height</b><span>183 cm (6'1")</span></div>
-                        <div class="miniFact"><b>Weight</b><span>99 kg (220 lb)</span></div>
-                        <div class="miniFact"><b>Email</b><span><a href="mailto:Olifuss@icloud.com" style="color:var(--accent); font-weight:900; text-decoration:none;">Olifuss@icloud.com</a></span></div>
+                        <div class="miniFact"><b>Height</b><span>183 cm (6 foot 1 inches)</span></div>
+                        <div class="miniFact"><b>Weight</b><span>220 lbs (99 kg)</span></div>
                     </div>
                 </div>
 
@@ -539,7 +522,7 @@
 
     <main class="container">
 
-        <!-- PROFILE -->
+        <!-- PLAYER PROFILE -->
         <section id="profile" class="section card">
             <div class="sectionTitle">
                 <h3>Player Profile</h3>
@@ -547,26 +530,35 @@
             </div>
 
             <div class="profileLayout">
-                <img class="profilePhoto" src="assets/OLIVERPROFILE.jpg" alt="Oliver Fussell profile photo">
+                <img class="profilePhoto" src="assets/OLIVERPROFILE.PNG" alt="Oliver Fussell profile photo">
 
                 <div>
                     <div class="facts" style="margin-top:0;">
                         <div class="fact"><b>Full Name</b><span>Oliver Fussell</span></div>
                         <div class="fact"><b>Date of Birth</b><span>05/05/2004</span></div>
+                        <div class="fact"><b>Age</b><span>21</span></div>
                         <div class="fact"><b>Nationality</b><span>English</span></div>
                         <div class="fact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="fact"><b>Primary Positions</b><span>Centre / Fly Half</span></div>
-                        <div class="fact"><b>Height</b><span>183 cm (6'1")</span></div>
-                        <div class="fact"><b>Weight</b><span>99 kg (220 lb)</span></div>
-                        <div class="fact"><b>Contact</b><span><a href="mailto:Olifuss@icloud.com" style="color:var(--accent); font-weight:900; text-decoration:none;">Olifuss@icloud.com</a> • +44 7803326921</span></div>
+                        <div class="fact"><b>Position</b><span>Centre / Fly Half</span></div>
+                        <div class="fact"><b>Height</b><span>183 cm / 6 foot 1 inches</span></div>
+                        <div class="fact"><b>Weight</b><span>220 lbs / 99 kg</span></div>
+                    </div>
+
+                    <div class="fact" style="margin-top:14px;">
+                        <b>Contact</b>
+                        <span>
+                            Email: <a href="mailto:Olifuss@icloud.com" style="color:var(--accent); font-weight:900; text-decoration:none;">Olifuss@icloud.com</a>
+                            <br>
+                            Phone: <a href="tel:+447803326921" style="color:var(--accent); font-weight:900; text-decoration:none;">+44 7803326921</a>
+                        </span>
                     </div>
 
                     <div class="fact" style="margin-top:14px;">
                         <b>Player Summary</b>
                         <span>
                             Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
-                            consistently organizing defensive lines and game plans to enhance team performance. Effective at the gain line with strong carries at centre,
-                            and confident as a first receiver under pressure, contributing to structure, tempo control, and attacking opportunities.
+                            consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
+                            and create opportunities for the team.
                         </span>
                     </div>
                 </div>
@@ -583,27 +575,22 @@
             <div class="kpiGrid">
                 <div class="kpi">
                     <h4>⚡ Attack</h4>
-                    <p>Strong distribution off both hands, excellent lines & timing, fixes defenders to create space, and breaks the gain line with strong carries.</p>
+                    <p>Strong ball distribution off both hands. Excellent line running and timing. Ability to fix defenders and create space. Effective decision-making at the line. Confident first receiver under pressure. Solid offloading game in contact. Ability to break the gain line with strong carries at centre.</p>
                 </div>
 
                 <div class="kpi">
-                    <h4>🎯 Kicking (Fly Half)</h4>
-                    <p>Tactical kicking from hand (touch, contestable, grubber), attacking kicks (chips, cross-field), and reliable goal-kicking.</p>
+                    <h4>🎯 Kicking (Fly-Half Specific)</h4>
+                    <p>Tactical kicking from hand (touch, contestable, grubber). Effective territory management. Attacking kicks behind the line (chips, cross-field). Reliable goal-kicking (percentage: ___%).</p>
                 </div>
 
                 <div class="kpi">
                     <h4>🧠 Game Management</h4>
-                    <p>Controls tempo and structure, reads defensive alignments quickly, organizes attacking shape and backline moves, adapts to match flow.</p>
+                    <p>Controls tempo and structure. Reads defensive alignments quickly. Strong communication and leadership. Organizes attacking shape and backline moves. Adapts game plan based on match flow.</p>
                 </div>
 
                 <div class="kpi">
                     <h4>🧱 Defence</h4>
-                    <p>Strong tackle technique (front-on & cover), good reads in the 10/12 channel, organizes defensive line, arrives at breakdown when required.</p>
-                </div>
-
-                <div class="kpi">
-                    <h4>🗣️ Leadership & Communication</h4>
-                    <p>Clear communicator on and off the field, leads defensive organization and supports game-plan execution.</p>
+                    <p>Strong tackle technique (front-on & cover tackles). Good defensive reads at 10/12 channel. Organizes defensive line. Effective breakdown arrival when required.</p>
                 </div>
             </div>
         </section>
@@ -622,10 +609,10 @@
                         <span class="pill">10</span>
                     </div>
                     <ul class="clean">
-                        <li>Primary game manager: controls tempo and structure</li>
-                        <li>Tactical kicking: territory, pressure, attacking kicks</li>
-                        <li>First receiver under pressure: decision-making at the line</li>
+                        <li>Controls tempo and structure</li>
+                        <li>Reads defensive alignments quickly</li>
                         <li>Organizes attacking shape and backline moves</li>
+                        <li>Tactical kicking: touch, contestable, grubber, chips, cross-field</li>
                     </ul>
                 </div>
 
@@ -635,38 +622,35 @@
                         <span class="pill">12 • 13</span>
                     </div>
                     <ul class="clean">
-                        <li>Strong carries to break the gain line</li>
-                        <li>Fixes defenders and creates space for outside threats</li>
+                        <li>Strong ball distribution off both hands</li>
                         <li>Excellent line running and timing</li>
-                        <li>Defensive reads in the 10/12 channel and line organization</li>
+                        <li>Fixes defenders and creates space</li>
+                        <li>Breaks the gain line with strong carries</li>
+                        <li>Organizes defensive line and reads at 10/12 channel</li>
                     </ul>
-                </div>
-            </div>
-
-            <div class="card" style="margin-top:14px;">
-                <b style="display:block; margin-bottom:8px;">Key Tools</b>
-                <div class="facts" style="margin-top:0;">
-                    <div class="fact"><b>Distribution</b><span>Strong ball distribution off both hands</span></div>
-                    <div class="fact"><b>Decision-Making</b><span>Effective at the line, confident first receiver</span></div>
-                    <div class="fact"><b>Territory</b><span>Effective territory management through kicking</span></div>
-                    <div class="fact"><b>Defensive Organization</b><span>Consistently organizes the defensive line</span></div>
                 </div>
             </div>
         </section>
 
-        <!-- HONOURS -->
+        <!-- HONOURS (CON FOTO A LA DERECHA, MÁS CHICA) -->
         <section id="honours" class="section">
             <div class="sectionTitle">
                 <h3>🏆 Honours</h3>
                 <p class="hint">Representative teams & awards</p>
             </div>
 
-            <div class="facts">
-                <div class="fact"><b>South West of England U18</b><span>Representative selection</span></div>
-                <div class="fact"><b>South East Bears All Stars</b><span>2022 • 2023 • 2024</span></div>
-                <div class="fact"><b>NCR All Star Team of the Tournament</b><span>x2</span></div>
-                <div class="fact"><b>NCR All American</b><span>Selection</span></div>
-                <div class="fact"><b>All American France Centennial Tour</b><span>2024</span></div>
+            <div class="profileLayout">
+                <!-- TEXTO -->
+                <div class="facts" style="margin-top:0;">
+                    <div class="fact"><b>South West of England U18</b><span></span></div>
+                    <div class="fact"><b>South East Bears All Stars</b><span>2022 • 2023 • 2024</span></div>
+                    <div class="fact"><b>NCR All Star Team of the Tournament</b><span>x2</span></div>
+                    <div class="fact"><b>NCR All American</b><span></span></div>
+                    <div class="fact"><b>All American France Centennial Tour</b><span>2024</span></div>
+                </div>
+
+                <!-- FOTO DERECHA (encapsulada y más chica) -->
+                <img class="honoursPhoto" src="assets/OLIVER_HONOURS.PNG" alt="Oliver Fussell honours photo">
             </div>
         </section>
 
@@ -688,45 +672,36 @@
             </div>
 
             <p class="hint" style="margin-top:10px;">
-                Replace <b>YOUTUBE_VIDEO_ID_HERE</b> with the real YouTube video ID.
+                Replace <b>YOUTUBE_VIDEO_ID_HERE</b> with the real YouTube video ID (only the ID, not the full link).
             </p>
-        </section>
-
-        <!-- GALLERY -->
-        <section id="gallery" class="section">
-            <div class="sectionTitle">
-                <h3>Photo Gallery</h3>
-                <p class="hint">Match-day moments</p>
-            </div>
-
-            <div class="gallery">
-                <img src="assets/OLIVER_1.jpg" alt="Oliver rugby action">
-                <img src="assets/OLIVER_2.jpg" alt="Oliver gameplay">
-                <img src="assets/OLIVER_3.jpg" alt="Oliver training">
-                <img src="assets/OLIVER_4.jpg" alt="Oliver match action">
-            </div>
         </section>
 
         <!-- REFERENCES -->
         <section id="references" class="section card">
             <div class="sectionTitle">
                 <h3>📎 References</h3>
-                <p class="hint">Verified coaching reference</p>
+                <p class="hint">Coach reference</p>
             </div>
 
-            <div class="fact" style="margin-top:0;">
-                <b>Coach Genaro Fessia — Head Coach, Belmont Abbey College</b>
-                <span>
-                    Argentinian • Puma #660 • Former professional rugby player (Sale Sharks, London Wasps, Barbarians RFC) • Vodacom Cup.<br>
-                    World Rugby certified coach (Level 2). Coached 3 years at the Argentinian National Team High Performance Center (Central Region, 2018–2021).<br><br>
-                    “First of all, Ollie is a great team member, a leader on and off the field with a great human spirit. As a player, he is a very versatile and adaptable athlete,
-                    agile and very powerful at the same time. Decisive in attack and with a very solid defense.”
-                </span>
-            </div>
+            <div class="facts" style="margin-top:0;">
+                <div class="fact">
+                    <b>Coach Genaro Fessia</b>
+                    <span>
+                        Head Coach at Belmont Abbey College (2022–present).<br>
+                        Puma #660 and former professional rugby player. Played for Sale Sharks, London Wasps, Barbarians RFC and competed in the Vodacom Cup.<br>
+                        World Rugby certified coach (Level 2).<br>
+                        Coached for 3 years at the Argentinian National Team High Performance Center (Central Region 2018-2021).<br><br>
+                        “First of all, Ollie is a great team member, a leader on and off the field with a great human spirit. As a player, he is a very versatile and adaptable athlete, agile and very powerful at the same time. Decisive in attack and with a very solid defense.”
+                    </span>
+                </div>
 
-            <div class="facts">
-                <div class="fact"><b>Phone</b><span>+1 980 829 7847</span></div>
-                <div class="fact"><b>Email</b><span><a href="mailto:genarofessia@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">genarofessia@gmail.com</a></span></div>
+                <div class="fact">
+                    <b>Reference Contact</b>
+                    <span>
+                        Phone: <a href="tel:+19808297847" style="color:var(--accent); font-weight:900; text-decoration:none;">+1 980 829 7847</a><br>
+                        Email: <a href="mailto:genarofessia@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">genarofessia@gmail.com</a>
+                    </span>
+                </div>
             </div>
         </section>
 
