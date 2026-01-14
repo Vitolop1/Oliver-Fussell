@@ -14,8 +14,10 @@
             --text: #0f172a;
             --muted: #475569;
             --line: #dbe2ea;
-            --accent: #6cb4e4; /* light blue */
+            /* England flag palette */
+            --accent: #c8102e; /* St George red */
         }
+
 
         * {
             box-sizing: border-box;
@@ -164,18 +166,11 @@
         }
 
             .section::before {
-                content: "";
-                position: absolute;
-                left: 50%;
-                bottom: 18px;
-                transform: translateX(-50%);
-                width: min(1100px, calc(100% - 40px));
-                height: 10px;
-                border-radius: 999px;
-                background: rgba(108,180,228,.75);
-                border: 1px solid rgba(108,180,228,.55);
-                box-shadow: 0 14px 34px rgba(108,180,228,.35);
+                background: rgba(200,16,46,.55);
+                border: 1px solid rgba(200,16,46,.45);
+                box-shadow: 0 14px 34px rgba(200,16,46,.25);
             }
+
 
             .section::after {
                 content: none;
@@ -379,14 +374,11 @@
             }
 
         .pill {
-            font-size: 12px;
-            font-weight: 900;
-            padding: 6px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: #f5fbff;
-            color: #0b2a45;
+            background: #fff5f6;
+            color: #7a0b1a;
+            border: 1px solid rgba(200,16,46,.25);
         }
+
 
         ul.clean {
             margin: 10px 0 0;
