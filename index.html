@@ -1,759 +1,1219 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Oliver Fussell | Rugby Highlights & Player Profile</title>
-    <meta name="description" content="Oliver Fussell rugby highlights, player profile, Centre/Fly Half, honours, strengths, and contact." />
-
-    <style>
-        :root {
-            --bg: #f5f7fa;
-            --card: #ffffff;
-            --text: #0f172a;
-            --muted: #475569;
-            --line: #dbe2ea;
-            /* England flag palette */
-            --accent: #c8102e; /* St George red */
-        }
-
-
-        * {
-            box-sizing: border-box;
-        }
-
-        html, body {
-            max-width: 100%;
-            overflow-x: hidden;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: var(--text);
-            background: linear-gradient(rgba(245,247,250,.88), rgba(245,247,250,.95)), url("assets/OLIVER_BG.jpg") center/cover no-repeat fixed;
-        }
-
-        header {
-            background: #fff;
-            border-bottom: 1px solid var(--line);
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
-
-        .nav {
-            max-width: 1100px;
-            margin: auto;
-            padding: 12px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-            .nav h1 {
-                margin: 0;
-                font-size: 18px;
-                font-weight: 900;
-                letter-spacing: .2px;
-            }
-
-        .navLinks {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-
-            .navLinks a {
-                text-decoration: none;
-                color: var(--accent);
-                font-weight: 800;
-                font-size: 14px;
-                padding: 6px 8px;
-                border-radius: 10px;
-            }
-
-                .navLinks a:hover {
-                    background: #f5fbff;
-                }
-
-        .hero {
-            padding: 70px 20px 50px;
-            border-bottom: 1px solid var(--line);
-            background: transparent;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: auto;
-        }
-
-        .heroGrid {
-            display: grid;
-            grid-template-columns: 1.25fr .75fr;
-            gap: 16px;
-            align-items: stretch;
-        }
-
-        @media (max-width:900px) {
-            .heroGrid {
-                grid-template-columns: 1fr;
-            }
-
-            header {
-                position: static;
-            }
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin: 0 0 10px;
-            font-weight: 1000;
-        }
-
-        .hero p {
-            font-size: 16px;
-            color: var(--muted);
-            max-width: 760px;
-            margin: 0 0 14px;
-            line-height: 1.6;
-        }
-
-        .btnRow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 14px;
-        }
-
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 12px;
-            border-radius: 14px;
-            border: 1px solid var(--line);
-            background: #fff;
-            color: var(--text);
-            text-decoration: none;
-            font-weight: 900;
-            font-size: 14px;
-            white-space: nowrap;
-        }
-
-        .btnPrimary {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #06233a;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 20px;
-            margin-top: 20px;
-        }
-
-        /* SECTIONS + SEPARADOR */
-        .section {
-            position: relative;
-            margin: 54px 0;
-            padding-bottom: 54px;
-        }
-
-            .section::before {
-                background: rgba(200,16,46,.55);
-                border: 1px solid rgba(200,16,46,.45);
-                box-shadow: 0 14px 34px rgba(200,16,46,.25);
-            }
-
-
-            .section::after {
-                content: none;
-            }
-
-        main.container section.section:last-child::before {
-            display: none;
-        }
-
-        .sectionTitle {
-            display: flex;
-            align-items: flex-end;
-            justify-content: space-between;
-            gap: 12px;
-            flex-wrap: wrap;
-            margin-bottom: 12px;
-        }
-
-            .sectionTitle h3 {
-                font-size: 24px;
-                margin: 0;
-                letter-spacing: .2px;
-            }
-
-        .hint {
-            font-size: 13px;
-            color: var(--muted);
-            margin: 0;
-        }
-
-        .facts {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 14px;
-            margin-top: 16px;
-        }
-
-        .fact {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 12px;
-            background: #f9fbfd;
-            min-width: 0;
-        }
-
-            .fact b {
-                display: block;
-                margin-bottom: 6px;
-                font-size: 13px;
-            }
-
-            .fact span {
-                color: var(--muted);
-                font-size: 14px;
-                line-height: 1.45;
-                overflow-wrap: anywhere;
-                word-break: break-word;
-            }
-
-        .profileLayout {
-            display: grid;
-            grid-template-columns: minmax(0, 420px) minmax(0, 1fr);
-            gap: 26px;
-            align-items: start;
-            margin-top: 14px;
-        }
-
-        /* FOTO HONOURS (más chica y encapsulada) */
-        .honoursPhoto {
-            width: 100%;
-            max-width: 320px; /* más chica que profile */
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
-            margin: auto;
-        }
-
-        /* FOTO HONOURS (más chica y encapsulada) */
-        .honoursPhoto {
-            width: 100%;
-            max-width: 320px; /* más chica que profile */
-            height: auto;
-            object-fit: cover;
-            border-radius: 16px;
-            border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
-            margin: auto;
-        }
-
-
-        @media (max-width:900px) {
-            .honoursPhoto {
-                justify-self: center;
-                max-width: 420px;
-            }
-        }
-
-        @media (max-width:900px) {
-            .profileLayout {
-                grid-template-columns: 1fr;
-            }
-
-            .profilePhoto {
-                max-width: 420px;
-                margin: auto;
-            }
-        }
-        /* HONOURS: foto encapsulada dentro de "burbuja" y más chica */
-        .honoursPhotoCard {
-            background: #fff;
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .honoursPhoto {
-            width: 100%;
-            max-width: 320px; /* más chica */
-            height: auto;
-            object-fit: cover;
-            border-radius: 14px;
-            border: 2px solid var(--line);
-            box-shadow: 0 12px 24px rgba(0,0,0,.10);
-            display: block;
-        }
-
-
-        @media (max-width:900px) {
-            .honoursPhoto {
-                max-width: 420px;
-                justify-self: center;
-            }
-        }
-
-        .miniFacts {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-top: 10px;
-        }
-
-        .miniFact {
-            border: 1px solid var(--line);
-            border-radius: 14px;
-            padding: 10px;
-            background: #f9fbfd;
-            min-width: 0;
-        }
-
-            .miniFact b {
-                display: block;
-                font-size: 12px;
-                margin-bottom: 6px;
-            }
-
-            .miniFact span {
-                color: var(--muted);
-                font-size: 13px;
-                overflow-wrap: anywhere;
-                word-break: break-word;
-            }
-
-        .kpiGrid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        .kpi {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            background: #fff;
-            min-width: 0;
-        }
-
-            .kpi h4 {
-                margin: 0 0 8px;
-                font-size: 15px;
-                font-weight: 1000;
-            }
-
-            .kpi p {
-                margin: 0;
-                color: var(--muted);
-                font-size: 14px;
-                line-height: 1.5;
-            }
-
-        .positionsGrid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 14px;
-            margin-top: 14px;
-        }
-
-        @media (max-width:900px) {
-            .positionsGrid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .posCard {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            padding: 14px;
-            background: #fff;
-            min-width: 0;
-        }
-
-        .posHeader {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-bottom: 8px;
-        }
-
-            .posHeader h4 {
-                margin: 0;
-                font-size: 16px;
-                font-weight: 1000;
-            }
-
-        .pill {
-            background: #fff5f6;
-            color: #7a0b1a;
-            border: 1px solid rgba(200,16,46,.25);
-        }
-
-
-        ul.clean {
-            margin: 10px 0 0;
-            padding-left: 18px;
-            color: var(--muted);
-        }
-
-            ul.clean li {
-                margin: 8px 0;
-            }
-
-        .badgeRow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 10px;
-        }
-
-        .badge {
-            font-size: 12px;
-            padding: 7px 10px;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: #ffffffcc;
-            color: var(--text);
-            font-weight: 900;
-        }
-
-        .videoWrap {
-            border: 1px solid var(--line);
-            border-radius: 16px;
-            overflow: hidden;
-            background: #fff;
-        }
-
-        .contactBox {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .contactLine {
-            color: var(--muted);
-            margin: 0;
-            font-size: 15px;
-            overflow-wrap: anywhere;
-            word-break: break-word;
-        }
-
-            .contactLine a {
-                color: var(--accent);
-                font-weight: 1000;
-                text-decoration: none;
-            }
-
-        footer {
-            border-top: 1px solid var(--line);
-            padding: 20px;
-            text-align: center;
-            color: var(--muted);
-            font-size: 14px;
-            margin-top: 50px;
-            background: #ffffffcc;
-            backdrop-filter: blur(2px);
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oliver Fussell | Rugby Profile & Highlights</title>
+  <meta
+    name="description"
+    content="Oliver Fussell rugby profile featuring Centre/Fly Half experience, honours, highlights, references, and contact information."
+  />
+  <meta name="theme-color" content="#11161f" />
+  <meta property="og:title" content="Oliver Fussell | Rugby Profile & Highlights" />
+  <meta
+    property="og:description"
+    content="Backline player with strong game management, communication, tactical kicking, and high-level honours."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="assets/OLIVERPROFILE.png" />
+  <meta property="og:image:alt" content="Oliver Fussell rugby profile photo" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Oliver Fussell",
+      "jobTitle": "Rugby Player",
+      "description": "Rugby player who covers Centre and Fly Half with strong game management and tactical kicking.",
+      "image": "assets/OLIVERPROFILE.png",
+      "email": "mailto:oliverfussell4@gmail.com",
+      "telephone": "+447803326921",
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Belmont Abbey College"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --bg: #0f141c;
+      --surface: rgba(17, 22, 31, 0.9);
+      --surface-soft: rgba(255, 255, 255, 0.04);
+      --line: rgba(255, 255, 255, 0.1);
+      --line-strong: rgba(255, 255, 255, 0.18);
+      --text: #f7f8fb;
+      --muted: #aeb7c5;
+      --accent: #c8102e;
+      --accent-soft: rgba(200, 16, 46, 0.18);
+      --accent-soft-2: rgba(200, 16, 46, 0.08);
+      --paper: #f4efe9;
+      --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.28);
+      --shadow-md: 0 16px 32px rgba(0, 0, 0, 0.22);
+      --radius-xl: 30px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max: 1200px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Manrope", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(200, 16, 46, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(255, 255, 255, 0.08), transparent 18%),
+        linear-gradient(180deg, #11161f 0%, #151c27 58%, #10151e 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background:
+        linear-gradient(90deg, transparent calc(50% - 1px), rgba(255, 255, 255, 0.03) calc(50% - 1px), rgba(255, 255, 255, 0.03) calc(50% + 1px), transparent calc(50% + 1px)),
+        linear-gradient(180deg, transparent calc(50% - 1px), rgba(200, 16, 46, 0.06) calc(50% - 1px), rgba(200, 16, 46, 0.06) calc(50% + 1px), transparent calc(50% + 1px));
+      opacity: 0.4;
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    a { color: inherit; }
+    img, iframe { display: block; max-width: 100%; }
+    button { font: inherit; }
+    ::selection { background: rgba(200, 16, 46, 0.3); color: var(--text); }
+
+    .container {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .eyebrow,
+    .sectionKicker,
+    .detailLabel,
+    .metricLabel,
+    .honourLabel,
+    .referenceLabel,
+    .contactLabel,
+    .brandKicker {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #f5cfd6;
+    }
+
+    .section {
+      scroll-margin-top: 110px;
+      margin-top: 48px;
+    }
+
+    .sectionHeading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+
+    .sectionTitle {
+      margin: 6px 0 0;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(2.2rem, 4vw, 3.3rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .sectionLead {
+      margin: 0;
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .surface,
+    .statCard,
+    .detailCard,
+    .strengthCard,
+    .positionCard,
+    .honourCard,
+    .referenceCard,
+    .contactCard,
+    .filmCard,
+    .heroPhoto,
+    .heroInfoCard {
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(20, 27, 39, 0.94), rgba(15, 20, 28, 0.98));
+      box-shadow: var(--shadow-md);
+      backdrop-filter: blur(14px);
+    }
+
+    .siteHeader {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      padding: 12px 0;
+    }
+
+    .navShell {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      justify-content: space-between;
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      background: rgba(15, 20, 28, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: max-content;
+      text-decoration: none;
+    }
+
+    .brandName {
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.7rem;
+      line-height: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .siteNav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      flex: 1;
+      flex-wrap: wrap;
+    }
+
+    .siteNav a,
+    .navCta,
+    .menuToggle {
+      border-radius: 999px;
+      border: 1px solid transparent;
+      text-decoration: none;
+      transition: 180ms ease;
+    }
+
+    .siteNav a {
+      padding: 10px 14px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .siteNav a:hover,
+    .siteNav a.is-active {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.08);
+    }
+
+    .navCta,
+    .btnPrimary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(200, 16, 46, 0.32);
+      background: linear-gradient(135deg, rgba(200, 16, 46, 0.26), rgba(255, 255, 255, 0.06));
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 800;
+      box-shadow: 0 14px 28px rgba(200, 16, 46, 0.16);
+    }
+
+    .menuToggle,
+    .btnSecondary,
+    .btnGhost {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text);
+      font-weight: 800;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .navCta:hover,
+    .btnPrimary:hover,
+    .btnSecondary:hover,
+    .btnGhost:hover { transform: translateY(-1px); }
+
+    .menuToggle { display: none; }
+
+    .hero {
+      padding: 44px 0 16px;
+      overflow: clip;
+    }
+
+    .heroLayout,
+    .profileGrid,
+    .honoursLayout,
+    .filmLayout,
+    .referenceGrid,
+    .contactGrid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
+      gap: 28px;
+      align-items: center;
+    }
+
+    .heroTitle {
+      margin: 12px 0 0;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(4.2rem, 9vw, 7.4rem);
+      line-height: 0.88;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .heroLead {
+      max-width: 680px;
+      margin: 18px 0 0;
+      color: var(--text);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .heroTags,
+    .chipRow,
+    .ctaRow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .heroTags span,
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .heroStats,
+    .detailGrid,
+    .strengthGrid,
+    .positionGrid,
+    .honourGrid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .heroStats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 26px; }
+    .detailGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .strengthGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .positionGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .honourGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+    .statCard,
+    .detailCard,
+    .strengthCard,
+    .positionCard,
+    .honourCard,
+    .referenceCard,
+    .contactCard,
+    .filmCard,
+    .surface {
+      padding: 24px;
+      border-radius: var(--radius-xl);
+    }
+
+    .metricValue,
+    .strengthCard h3,
+    .positionCard h3,
+    .referenceCard h3,
+    .contactCard h3,
+    .filmCard h3 {
+      margin: 10px 0 0;
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: clamp(1.8rem, 3vw, 2.3rem);
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .metricSub,
+    .summaryText,
+    .strengthCard p,
+    .positionCard p,
+    .honourCard p,
+    .referenceCard p,
+    .contactCard p,
+    .filmCard p,
+    .detailValue,
+    .sectionLead {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .detailLabel,
+    .contactLabel { color: var(--muted); }
+    .detailValue { color: var(--text); font-weight: 700; }
+
+    .heroVisual {
+      position: relative;
+      display: grid;
+      place-items: center;
+    }
+
+    .heroPhoto {
+      width: min(100%, 470px);
+      height: min(72vh, 620px);
+      border-radius: 34px;
+      overflow: hidden;
+      padding: 16px;
+      background:
+        linear-gradient(180deg, rgba(200, 16, 46, 0.14), rgba(17, 22, 31, 0.22)),
+        linear-gradient(180deg, rgba(20, 27, 39, 0.96), rgba(15, 20, 28, 1));
+    }
+
+    .heroPhoto img,
+    .honoursImage img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center center;
+      border-radius: 22px;
+      background: #171d27;
+    }
+
+    .heroInfoCard {
+      position: absolute;
+      inset: auto auto 20px -10px;
+      width: min(260px, 70vw);
+      padding: 18px;
+      border-radius: 24px;
+    }
+
+    .heroInfoCard strong {
+      display: block;
+      margin-top: 8px;
+      color: var(--text);
+      font-family: "Barlow Condensed", sans-serif;
+      font-size: 1.6rem;
+      line-height: 0.95;
+      text-transform: uppercase;
+    }
+
+    .heroInfoCard p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.92rem;
+    }
+
+    .summaryText {
+      margin: 0;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .profileSummary,
+    .profileSide,
+    .filmNotes,
+    .contactStack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.75em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+      box-shadow: 0 0 0 5px rgba(200, 16, 46, 0.12);
+    }
+
+    .positionTag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 34px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft-2);
+      border: 1px solid rgba(200, 16, 46, 0.22);
+      color: #ffd7de;
+      font-size: 0.82rem;
+      font-weight: 800;
+    }
+
+    .positionList {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .positionList li + li { margin-top: 10px; }
+
+    .positionNote,
+    .referencesNote {
+      margin-top: 16px;
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--text);
+      font-weight: 700;
+    }
+
+    .honoursImage {
+      height: 100%;
+      min-height: 460px;
+      padding: 20px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(20, 27, 39, 0.96), rgba(15, 20, 28, 1));
+      box-shadow: var(--shadow-md);
+    }
+
+    .honourCard {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .honourCard::after {
+      content: "";
+      position: absolute;
+      inset: auto -24px -24px auto;
+      width: 110px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(200, 16, 46, 0.18), transparent 70%);
+    }
+
+    .referenceQuote {
+      margin: 0;
+      color: var(--text);
+      font-size: 1.04rem;
+      line-height: 1.8;
+    }
+
+    .referenceMeta,
+    .contactDetails {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .metaRow {
+      padding: 16px;
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .metaValue {
+      color: var(--text);
+      font-weight: 700;
+      line-height: 1.6;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+    }
+
+    .filmFrame {
+      padding: 14px;
+      border-radius: 30px;
+      border: 1px solid var(--line);
+      background: linear-gradient(180deg, rgba(20, 27, 39, 0.96), rgba(15, 20, 28, 1));
+      box-shadow: var(--shadow-md);
+    }
+
+    .filmInner {
+      border-radius: 24px;
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      background: rgba(0, 0, 0, 0.22);
+    }
+
+    .filmInner iframe { width: 100%; height: 100%; border: 0; }
+
+    .footer {
+      padding: 28px 0 44px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.94rem;
+    }
+
+    .statusToast {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+      min-width: 220px;
+      max-width: min(320px, calc(100% - 36px));
+      padding: 14px 16px;
+      border-radius: 18px;
+      border: 1px solid rgba(200, 16, 46, 0.24);
+      background: rgba(15, 20, 28, 0.94);
+      color: var(--text);
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      transform: translateY(10px);
+      pointer-events: none;
+      transition: 180ms ease;
+    }
+
+    .statusToast.is-visible,
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 560ms ease, transform 560ms ease;
+    }
+
+    @media (max-width: 1120px) {
+      .heroLayout,
+      .profileGrid,
+      .honoursLayout,
+      .filmLayout,
+      .referenceGrid,
+      .contactGrid { grid-template-columns: 1fr; }
+      .heroPhoto { width: min(100%, 500px); height: min(78vw, 620px); }
+      .strengthGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .heroInfoCard { left: 14px; }
+    }
+
+    @media (max-width: 960px) {
+      .navShell { position: relative; }
+      .menuToggle { display: inline-flex; }
+
+      .siteNav {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: grid;
+        gap: 8px;
+        padding: 14px;
+        border-radius: 22px;
+        border: 1px solid var(--line);
+        background: rgba(15, 20, 28, 0.96);
+        backdrop-filter: blur(18px);
+        opacity: 0;
+        transform: translateY(-10px);
+        pointer-events: none;
+        transition: 180ms ease;
+      }
+
+      body[data-nav-open="true"] .siteNav {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+      }
+
+      .siteNav a { width: 100%; padding: 12px 14px; }
+      .navCta { display: none; }
+      .heroStats,
+      .detailGrid,
+      .strengthGrid,
+      .honourGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 720px) {
+      .navShell { padding: 14px; }
+      .brandName { font-size: 1.46rem; }
+      .heroTitle { font-size: clamp(3.3rem, 16vw, 5.4rem); }
+      .heroLead { font-size: 0.98rem; }
+      .heroStats,
+      .detailGrid,
+      .strengthGrid,
+      .positionGrid,
+      .honourGrid { grid-template-columns: 1fr; }
+      .heroPhoto { height: 480px; padding: 12px; }
+      .heroInfoCard { position: relative; inset: auto; width: 100%; margin-top: 16px; }
+      .heroVisual { display: block; }
+      .surface,
+      .statCard,
+      .detailCard,
+      .strengthCard,
+      .positionCard,
+      .honourCard,
+      .referenceCard,
+      .contactCard,
+      .filmCard,
+      .filmFrame { padding: 22px; }
+      .honoursImage { min-height: 360px; padding: 14px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+
+    @media print {
+      body { background: #fff; color: #000; }
+      body::before, .siteHeader, .statusToast, .ctaRow, .filmActions { display: none !important; }
+      .surface, .statCard, .detailCard, .strengthCard, .positionCard, .honourCard, .referenceCard, .contactCard, .filmCard, .filmFrame, .heroPhoto, .heroInfoCard, .honoursImage {
+        background: #fff !important;
+        color: #000 !important;
+        box-shadow: none !important;
+        border: 1px solid #d7dfe8 !important;
+        break-inside: avoid;
+      }
+      .filmInner iframe { display: none; }
+    }
+  </style>
 </head>
+<body data-nav-open="false">
+  <header class="siteHeader">
+    <div class="navShell">
+      <a class="brand" href="#top" aria-label="Oliver Fussell home">
+        <span class="brandKicker">Rugby Profile</span>
+        <span class="brandName">Oliver Fussell</span>
+      </a>
 
-<body>
-    <header>
-        <div class="nav">
-            <h1>Oliver Fussell</h1>
-            <div class="navLinks">
-                <a href="#profile">Profile</a>
-                <a href="#strengths">Strengths</a>
-                <a href="#positions">Positions</a>
-                <a href="#honours">Honours</a>
-                <a href="#highlights">Highlights</a>
-                <a href="#references">References</a>
-                <a href="#contact">Contact</a>
-            </div>
-        </div>
-    </header>
+      <button class="menuToggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
 
+      <nav class="siteNav" id="site-nav" aria-label="Primary">
+        <a href="#profile">Profile</a>
+        <a href="#strengths">Strengths</a>
+        <a href="#positions">Positions</a>
+        <a href="#honours">Honours</a>
+        <a href="#film">Film</a>
+        <a href="#references">References</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <a class="navCta" href="#contact">Recruiting Contact</a>
+    </div>
+  </header>
+
+  <main id="top">
     <section class="hero">
-        <div class="container">
-            <div class="heroGrid">
-                <div>
-                    <h2>Oliver Fussell</h2>
-                    <p>
-                        Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
-                        consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
-                        and create opportunities for the team.
-                    </p>
+      <div class="container heroLayout">
+        <div class="heroCopy reveal">
+          <span class="eyebrow">Centre / Fly Half | England</span>
+          <h1 class="heroTitle">Oliver Fussell</h1>
+          <p class="heroLead">
+            Backline player with strong communication, game management, tactical kicking, and the ability to
+            organize shape on both sides of the ball. Currently competing with Belmont Abbey College.
+          </p>
 
-                    <div class="btnRow">
-                        <a class="btn btnPrimary" href="#highlights">Watch Highlights</a>
-                        <a class="btn" href="#contact">Contact</a>
-                    </div>
+          <div class="heroTags" aria-label="Key profile tags">
+            <span>Centre / Fly Half</span>
+            <span>Belmont Abbey College</span>
+            <span>NCR All American</span>
+            <span>South East Bears All Stars</span>
+          </div>
 
-                    <div class="badgeRow">
-                        <span class="badge">Centre</span>
-                        <span class="badge">Fly Half</span>
-                        <span class="badge">Leadership</span>
-                        <span class="badge">Game Management</span>
-                        <span class="badge">Tactical Kicking</span>
-                    </div>
-                </div>
+          <div class="ctaRow">
+            <a class="btnPrimary" href="#film">Watch Highlights</a>
+            <a class="btnSecondary" href="mailto:oliverfussell4@gmail.com?subject=Rugby%20Recruiting%20-%20Oliver%20Fussell">Email Oliver</a>
+            <button class="btnGhost" type="button" id="copyEmail">Copy Email</button>
+          </div>
 
-                <div class="card" style="margin-top:0;">
-                    <div class="sectionTitle" style="margin-bottom:8px;">
-                        <h3 style="font-size:18px;">Quick Snapshot</h3>
-                        <p class="hint">Recruiting-ready</p>
-                    </div>
-
-                    <div class="miniFacts">
-                        <div class="miniFact"><b>Full Name</b><span>Oliver Fussell</span></div>
-                        <div class="miniFact"><b>Date of Birth</b><span>05/05/2004</span></div>
-                        <div class="miniFact"><b>Age</b><span>21</span></div>
-                        <div class="miniFact"><b>Nationality</b><span>English</span></div>
-                        <div class="miniFact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="miniFact"><b>Position</b><span>Centre / Fly Half</span></div>
-                        <div class="miniFact"><b>Height</b><span>183 cm (6 foot 1 inches)</span></div>
-                        <div class="miniFact"><b>Weight</b><span>220 lbs (99 kg)</span></div>
-                    </div>
-                </div>
-
-            </div>
+          <div class="heroStats" aria-label="Quick recruiting snapshot">
+            <article class="statCard">
+              <span class="metricLabel">Age</span>
+              <strong class="metricValue">21</strong>
+              <p class="metricSub">Born 05/05/2004.</p>
+            </article>
+            <article class="statCard">
+              <span class="metricLabel">Height / Weight</span>
+              <strong class="metricValue">183 cm / 99 kg</strong>
+              <p class="metricSub">6'1" and 220 lb.</p>
+            </article>
+            <article class="statCard">
+              <span class="metricLabel">Positions</span>
+              <strong class="metricValue">12 / 13 / 10</strong>
+              <p class="metricSub">Centre first, Fly Half coverage.</p>
+            </article>
+            <article class="statCard">
+              <span class="metricLabel">College</span>
+              <strong class="metricValue">Belmont Abbey</strong>
+              <p class="metricSub">Current college environment.</p>
+            </article>
+          </div>
         </div>
+
+        <div class="heroVisual reveal">
+          <div class="heroPhoto">
+            <img src="assets/OLIVERPROFILE.png" alt="Oliver Fussell profile photo" loading="eager" />
+          </div>
+
+          <aside class="heroInfoCard">
+            <span class="sectionKicker">Quick Read</span>
+            <strong>Leadership + Game Control</strong>
+            <p>Strong communicator, tactical decision-maker, and line-breaking threat in the backline.</p>
+          </aside>
+        </div>
+      </div>
     </section>
 
-    <main class="container">
+    <section class="section container" id="profile">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Profile</span>
+          <h2 class="sectionTitle">Player Profile</h2>
+        </div>
+        <p class="sectionLead">Clean overview for coaches, clubs, and recruiters.</p>
+      </div>
 
-        <!-- PLAYER PROFILE -->
-        <section id="profile" class="section card">
-            <div class="sectionTitle">
-                <h3>Player Profile</h3>
-                <p class="hint">Professional overview for coaches and recruiters</p>
+      <div class="profileGrid">
+        <article class="surface profileSummary reveal">
+          <p class="summaryText">
+            Oliver is a backline player who brings control, communication, and composure to high-level environments.
+            He can run the game as a 10, distribute effectively, and also attack the line as a centre.
+          </p>
+          <p class="summaryText">
+            His profile combines tactical awareness, line running, gain-line impact, and the ability to organize both
+            attack and defense.
+          </p>
+
+          <div class="detailGrid" aria-label="Player details">
+            <article class="detailCard">
+              <span class="detailLabel">Full Name</span>
+              <div class="detailValue">Oliver Fussell</div>
+            </article>
+            <article class="detailCard">
+              <span class="detailLabel">Date of Birth</span>
+              <div class="detailValue">05/05/2004</div>
+            </article>
+            <article class="detailCard">
+              <span class="detailLabel">Nationality</span>
+              <div class="detailValue">English</div>
+            </article>
+            <article class="detailCard">
+              <span class="detailLabel">College</span>
+              <div class="detailValue">Belmont Abbey College</div>
+            </article>
+            <article class="detailCard">
+              <span class="detailLabel">Height</span>
+              <div class="detailValue">183 cm / 6'1"</div>
+            </article>
+            <article class="detailCard">
+              <span class="detailLabel">Weight</span>
+              <div class="detailValue">99 kg / 220 lb</div>
+            </article>
+          </div>
+        </article>
+
+        <div class="profileSide reveal">
+          <article class="surface">
+            <span class="sectionKicker">Quick Notes</span>
+            <ul class="list">
+              <li>Centre / Fly Half profile with strong game management.</li>
+              <li>Confident first receiver under pressure and effective tactical kicker.</li>
+              <li>Strong line running, distribution, and gain-line impact.</li>
+              <li>Organizes the defensive line and communicates well.</li>
+            </ul>
+          </article>
+
+          <div class="chipRow" aria-label="Profile badges">
+            <span class="chip">Centre / Fly Half</span>
+            <span class="chip">Game Management</span>
+            <span class="chip">Tactical Kicking</span>
+            <span class="chip">Leadership</span>
+          </div>
+
+          <article class="surface">
+            <span class="sectionKicker">Direct Contact</span>
+            <div class="contactDetails">
+              <div class="metaRow">
+                <div class="contactLabel">Email</div>
+                <a class="metaValue" href="mailto:oliverfussell4@gmail.com">oliverfussell4@gmail.com</a>
+              </div>
+              <div class="metaRow">
+                <div class="contactLabel">Phone</div>
+                <a class="metaValue" href="tel:+447803326921">+44 7803326921</a>
+              </div>
             </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <div class="profileLayout">
-                <img class="profilePhoto" src="assets/OLIVERPROFILE.png" alt="Oliver Fussell profile photo">
+    <section class="section container" id="strengths">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Strengths</span>
+          <h2 class="sectionTitle">Strengths</h2>
+        </div>
+        <p class="sectionLead">High-value traits coaches can scan quickly.</p>
+      </div>
 
-                <div>
-                    <div class="facts" style="margin-top:0;">
-                        <div class="fact"><b>Full Name</b><span>Oliver Fussell</span></div>
-                        <div class="fact"><b>Date of Birth</b><span>05/05/2004</span></div>
-                        <div class="fact"><b>Age</b><span>21</span></div>
-                        <div class="fact"><b>Nationality</b><span>English</span></div>
-                        <div class="fact"><b>College</b><span>Belmont Abbey College</span></div>
-                        <div class="fact"><b>Position</b><span>Centre / Fly Half</span></div>
-                        <div class="fact"><b>Height</b><span>183 cm / 6 foot 1 inches</span></div>
-                        <div class="fact"><b>Weight</b><span>220 lbs / 99 kg</span></div>
-                    </div>
+      <div class="strengthGrid">
+        <article class="strengthCard reveal">
+          <span class="sectionKicker">Attack</span>
+          <h3>Line Running</h3>
+          <p>Strong timing, gain-line carries, and the ability to fix defenders and create space.</p>
+        </article>
+        <article class="strengthCard reveal">
+          <span class="sectionKicker">Passing</span>
+          <h3>Distribution</h3>
+          <p>Good ball movement off both hands and confident decision-making as first receiver.</p>
+        </article>
+        <article class="strengthCard reveal">
+          <span class="sectionKicker">Kicking</span>
+          <h3>Game Control</h3>
+          <p>Tactical kicking for territory, pressure, and attacking opportunities behind the line.</p>
+        </article>
+        <article class="strengthCard reveal">
+          <span class="sectionKicker">Defense</span>
+          <h3>Organization</h3>
+          <p>Solid defensive reads, strong communication, and reliable tackle work in the channel.</p>
+        </article>
+      </div>
+    </section>
 
-                    <div class="fact" style="margin-top:14px;">
-                        <b>Contact</b>
-                        <span>
-                            Email: <a href="mailto:oliverfussell4@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">oliverfussell4@gmail.com</a>
+    <section class="section container" id="positions">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Positions</span>
+          <h2 class="sectionTitle">Positions</h2>
+        </div>
+        <p class="sectionLead">Primary roles and what he brings in each one.</p>
+      </div>
 
-                            <br>
-                            Phone: <a href="tel:+447803326921" style="color:var(--accent); font-weight:900; text-decoration:none;">+44 7803326921</a>
-                        </span>
-                    </div>
-
-                    <div class="fact" style="margin-top:14px;">
-                        <b>Player Summary</b>
-                        <span>
-                            Skilled communicator and leader with experience in high-level competition. Demonstrates strong tactical awareness and adaptability,
-                            consistently organizing defensive lines and game plans to enhance overall team performance. With an ability to consistently break the gain line
-                            and create opportunities for the team.
-                        </span>
-                    </div>
-                </div>
+      <div class="positionGrid">
+        <article class="positionCard reveal">
+          <div class="sectionHeading" style="margin-bottom: 8px;">
+            <div>
+              <span class="sectionKicker">Fly Half</span>
+              <h3>10</h3>
             </div>
-        </section>
+            <span class="positionTag">Game Management</span>
+          </div>
+          <p>Controls tempo, organizes shape, and manages territory with the boot.</p>
+          <ul class="positionList">
+            <li>Reads defensive alignment quickly.</li>
+            <li>Runs structure and backline movement.</li>
+            <li>Uses tactical kicks to pressure and gain field position.</li>
+          </ul>
+          <div class="positionNote">Strong option when a team needs calm control and tactical direction.</div>
+        </article>
 
-        <!-- STRENGTHS -->
-        <section id="strengths" class="section">
-            <div class="sectionTitle">
-                <h3>✅ Strengths</h3>
-                <p class="hint">Coach-friendly overview (quick scan)</p>
+        <article class="positionCard reveal">
+          <div class="sectionHeading" style="margin-bottom: 8px;">
+            <div>
+              <span class="sectionKicker">Centre</span>
+              <h3>12 / 13</h3>
             </div>
+            <span class="positionTag">Gain Line + Distribution</span>
+          </div>
+          <p>Brings timing, running lines, distribution, and defensive communication from the midfield.</p>
+          <ul class="positionList">
+            <li>Breaks the gain line with strong carries.</li>
+            <li>Fixes defenders and creates space outside.</li>
+            <li>Organizes the defensive line and reads pressure well.</li>
+          </ul>
+          <div class="positionNote">Strong option when a team wants line-breaking ability with structure.</div>
+        </article>
+      </div>
+    </section>
 
-            <div class="kpiGrid">
-                <div class="kpi">
-                    <h4>⚡ Attack</h4>
-                    <p>Strong ball distribution off both hands. Excellent line running and timing. Ability to fix defenders and create space. Effective decision-making at the line. Confident first receiver under pressure. Solid offloading game in contact. Ability to break the gain line with strong carries at centre.</p>
-                </div>
+    <section class="section container" id="honours">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Honours</span>
+          <h2 class="sectionTitle">Representative Honours</h2>
+        </div>
+        <p class="sectionLead">Selections, awards, and representative teams.</p>
+      </div>
 
-                <div class="kpi">
-                    <h4>🎯 Kicking (Fly-Half Specific)</h4>
-                    <p>Tactical kicking from hand (touch, contestable, grubber). Effective territory management. Attacking kicks behind the line (chips, cross-field). Reliable goal-kicking (percentage: ___%).</p>
-                </div>
+      <div class="honoursLayout">
+        <div class="honourGrid">
+          <article class="honourCard reveal">
+            <span class="honourLabel">Representative Team</span>
+            <p>South West of England U18</p>
+          </article>
+          <article class="honourCard reveal">
+            <span class="honourLabel">All Stars</span>
+            <p>South East Bears All Stars, 2022 / 2023 / 2024</p>
+          </article>
+          <article class="honourCard reveal">
+            <span class="honourLabel">Tournament Award</span>
+            <p>NCR All Star Team of the Tournament x2</p>
+          </article>
+          <article class="honourCard reveal">
+            <span class="honourLabel">National Honour</span>
+            <p>NCR All American</p>
+          </article>
+          <article class="honourCard reveal">
+            <span class="honourLabel">International Tour</span>
+            <p>All American France Centennial Tour, 2024</p>
+          </article>
+        </div>
 
-                <div class="kpi">
-                    <h4>🧠 Game Management</h4>
-                    <p>Controls tempo and structure. Reads defensive alignments quickly. Strong communication and leadership. Organizes attacking shape and backline moves. Adapts game plan based on match flow.</p>
-                </div>
+        <div class="honoursImage reveal">
+          <img src="assets/OLIVER_HONOURS.png" alt="Oliver Fussell honours image" loading="lazy" />
+        </div>
+      </div>
+    </section>
 
-                <div class="kpi">
-                    <h4>🧱 Defence</h4>
-                    <p>Strong tackle technique (front-on & cover tackles). Good defensive reads at 10/12 channel. Organizes defensive line. Effective breakdown arrival when required.</p>
-                </div>
+    <section class="section container" id="film">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Film</span>
+          <h2 class="sectionTitle">Highlights</h2>
+        </div>
+        <p class="sectionLead">Film that shows distribution, game control, line running, and tactical kicking.</p>
+      </div>
+
+      <div class="filmLayout">
+        <div class="filmFrame reveal">
+          <div class="filmInner">
+            <iframe
+              src="https://www.youtube.com/embed/6lSgfpm6TLs"
+              title="Oliver Fussell Rugby Highlights"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+        <aside class="filmCard filmNotes reveal">
+          <span class="sectionKicker">What To Watch</span>
+          <h3>Film Notes</h3>
+          <p>Short guide for coaches reviewing the reel.</p>
+          <div class="contactDetails">
+            <div class="metaRow">
+              <div class="contactLabel">First Receiver Work</div>
+              <div class="metaValue">Composure, passing range, and decision-making under pressure.</div>
             </div>
-        </section>
-
-        <!-- POSITIONS -->
-        <section id="positions" class="section">
-            <div class="sectionTitle">
-                <h3>Positions</h3>
-                <p class="hint">Playable roles + responsibilities</p>
+            <div class="metaRow">
+              <div class="contactLabel">Running Threat</div>
+              <div class="metaValue">Good timing, line breaks, and gain-line impact from centre.</div>
             </div>
-
-            <div class="positionsGrid">
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Fly Half</h4>
-                        <span class="pill">10</span>
-                    </div>
-                    <ul class="clean">
-                        <li>Controls tempo and structure</li>
-                        <li>Reads defensive alignments quickly</li>
-                        <li>Organizes attacking shape and backline moves</li>
-                        <li>Tactical kicking: touch, contestable, grubber, chips, cross-field</li>
-                    </ul>
-                </div>
-
-                <div class="posCard">
-                    <div class="posHeader">
-                        <h4>Centre</h4>
-                        <span class="pill">12 • 13</span>
-                    </div>
-                    <ul class="clean">
-                        <li>Strong ball distribution off both hands</li>
-                        <li>Excellent line running and timing</li>
-                        <li>Fixes defenders and creates space</li>
-                        <li>Breaks the gain line with strong carries</li>
-                        <li>Organizes defensive line and reads at 10/12 channel</li>
-                    </ul>
-                </div>
+            <div class="metaRow">
+              <div class="contactLabel">Tactical Kicking</div>
+              <div class="metaValue">Territory management and attacking kicks behind the line.</div>
             </div>
-        </section>
-
-        <!-- HONOURS (TODO ADENTRO DE LA BURBUJA + FOTO A LA DERECHA) -->
-        <section id="honours" class="section card">
-            <div class="sectionTitle">
-                <h3>🏆 Honours</h3>
-                <p class="hint">Representative teams & awards</p>
+            <div class="metaRow">
+              <div class="contactLabel">Defensive Communication</div>
+              <div class="metaValue">Line organization and reliable work in the channel.</div>
             </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+    
+    <section class="section container" id="references">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">References</span>
+          <h2 class="sectionTitle">Coach Reference</h2>
+        </div>
+        <p class="sectionLead">Reference information and coach feedback.</p>
+      </div>
 
-            <div class="profileLayout">
-                <!-- INFO -->
-                <div class="facts" style="margin-top:0;">
-                    <div class="fact"><b>South West of England U18</b><span></span></div>
-                    <div class="fact"><b>South East Bears All Stars</b><span>2022 • 2023 • 2024</span></div>
-                    <div class="fact"><b>NCR All Star Team of the Tournament</b><span>x2</span></div>
-                    <div class="fact"><b>NCR All American</b><span></span></div>
-                    <div class="fact"><b>All American France Centennial Tour</b><span>2024</span></div>
-                </div>
+      <div class="referenceGrid">
+        <article class="referenceCard reveal">
+          <span class="referenceLabel">Coach Quote</span>
+          <h3>Genaro Fessia</h3>
+          <p class="referenceQuote">
+            "Ollie is a great team member and a leader on and off the field. He is versatile, agile, powerful,
+            decisive in attack, and very solid in defense."
+          </p>
+          <div class="referencesNote">Head Coach at Belmont Abbey College since 2022. Puma #660 and former professional player.</div>
+        </article>
 
-                <!-- FOTO DERECHA (ENCAPSULADA Y MÁS CHICA) -->
-                <div class="honoursPhotoCard">
-                    <img class="honoursPhoto" src="assets/OLIVER_HONOURS.png" alt="Oliver Fussell honours photo">
-                </div>
+        <article class="referenceCard reveal">
+          <span class="referenceLabel">Reference Contact</span>
+          <h3>Direct Contact</h3>
+          <div class="referenceMeta">
+            <div class="metaRow">
+              <div class="contactLabel">Phone</div>
+              <a class="metaValue" href="tel:+19808297847">+1 980 829 7847</a>
             </div>
-        </section>
-
-
-        <!-- HIGHLIGHTS -->
-        <section id="highlights" class="section">
-            <div class="sectionTitle">
-                <h3>Highlights</h3>
-                <p class="hint">Game highlights hosted on YouTube</p>
+            <div class="metaRow">
+              <div class="contactLabel">Email</div>
+              <a class="metaValue" href="mailto:genarofessia@gmail.com">genarofessia@gmail.com</a>
             </div>
-
-            <div class="videoWrap" style="padding:0; aspect-ratio:16/9;">
-                <iframe src="https://www.youtube.com/embed/6lSgfpm6TLs"
-                        title="Oliver Fussell Rugby Highlights"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        allowfullscreen
-                        style="width:100%; height:100%; border:0;">
-                </iframe>
+            <div class="metaRow">
+              <div class="contactLabel">Background</div>
+              <div class="metaValue">World Rugby Level 2 coach with professional and national high-performance experience.</div>
             </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-            <p class="hint" style="margin-top:10px;">
-                Replace <b>YOUTUBE_VIDEO_ID_HERE</b> with the real YouTube video ID (only the ID, not the full link).
-            </p>
-        </section>
+    <section class="section container" id="contact">
+      <div class="sectionHeading reveal">
+        <div>
+          <span class="sectionKicker">Contact</span>
+          <h2 class="sectionTitle">Recruiting Contact</h2>
+        </div>
+        <p class="sectionLead">Clear contact details for coaches, clubs, and recruiters.</p>
+      </div>
 
-        <!-- REFERENCES -->
-        <section id="references" class="section card">
-            <div class="sectionTitle">
-                <h3>📎 References</h3>
-                <p class="hint">Coach reference</p>
+      <div class="contactGrid">
+        <article class="contactCard reveal">
+          <span class="sectionKicker">Player Contact</span>
+          <h3>Oliver Fussell</h3>
+          <p>Available for recruiting conversations, clubs, and new opportunities.</p>
+          <div class="contactDetails">
+            <div class="metaRow">
+              <div class="contactLabel">Email</div>
+              <a class="metaValue" href="mailto:oliverfussell4@gmail.com">oliverfussell4@gmail.com</a>
             </div>
-
-            <div class="facts" style="margin-top:0;">
-                <div class="fact">
-                    <b>Coach Genaro Fessia</b>
-                    <span>
-                        Head Coach at Belmont Abbey College (2022–present).<br>
-                        Puma #660 and former professional rugby player. Played for Sale Sharks, London Wasps, Barbarians RFC and competed in the Vodacom Cup.<br>
-                        World Rugby certified coach (Level 2).<br>
-                        Coached for 3 years at the Argentinian National Team High Performance Center (Central Region 2018-2021).<br><br>
-                        “First of all, Ollie is a great team member, a leader on and off the field with a great human spirit. As a player, he is a very versatile and adaptable athlete, agile and very powerful at the same time. Decisive in attack and with a very solid defense.”
-                    </span>
-                </div>
-
-                <div class="fact">
-                    <b>Reference Contact</b>
-                    <span>
-                        Phone: <a href="tel:+19808297847" style="color:var(--accent); font-weight:900; text-decoration:none;">+1 980 829 7847</a><br>
-                        Email: <a href="mailto:genarofessia@gmail.com" style="color:var(--accent); font-weight:900; text-decoration:none;">genarofessia@gmail.com</a>
-                    </span>
-                </div>
+            <div class="metaRow">
+              <div class="contactLabel">Phone</div>
+              <a class="metaValue" href="tel:+447803326921">+44 7803326921</a>
             </div>
-        </section>
+          </div>
+        </article>
 
-        <!-- CONTACT -->
-        <section id="contact" class="section card">
-            <div class="sectionTitle">
-                <h3>Contact</h3>
-                <p class="hint">For coaches, clubs, and recruiting</p>
-            </div>
+        <article class="contactCard contactStack reveal">
+          <span class="sectionKicker">Quick Actions</span>
+          <h3>Next Step</h3>
+          <p>Send an email, save the page as a PDF, or watch the film first.</p>
+          <div class="ctaRow">
+            <a class="btnPrimary" href="mailto:oliverfussell4@gmail.com?subject=Rugby%20Recruiting%20-%20Oliver%20Fussell">Email Now</a>
+            <button class="btnSecondary" type="button" id="printPage">Save as PDF</button>
+          </div>
+          <div class="referencesNote">Belmont Abbey College | Centre / Fly Half | English</div>
+        </article>
+      </div>
+    </section>
+  </main>
 
-            <div class="contactBox">
-                <p class="contactLine">
-                    Email: <a href="mailto:oliverfussell4@gmail.com">oliverfussell4@gmail.com</a>
+  <footer class="footer">
+    <div class="container">&copy; <span id="year">2026</span> Oliver Fussell. Rugby highlights and recruiting profile.</div>
+  </footer>
 
-                    Phone: <a href="tel:+447803326921">+44 7803326921</a>
-                </p>
-                <a class="btn btnPrimary" href="mailto:oliverfussell4@gmail.com?subject=Rugby%20Recruiting%20-%20Oliver%20Fussell">Email Now</a>
+  <div class="statusToast" id="statusToast" aria-live="polite"></div>
+  <script>
+    const body = document.body;
+    const menuToggle = document.querySelector(".menuToggle");
+    const navLinks = document.querySelectorAll(".siteNav a");
+    const statusToast = document.getElementById("statusToast");
+    const copyEmailButton = document.getElementById("copyEmail");
+    const printPageButton = document.getElementById("printPage");
+    const emailAddress = "oliverfussell4@gmail.com";
+    let toastTimeout;
 
-            </div>
-        </section>
+    const showToast = (message) => {
+      if (!statusToast) return;
+      statusToast.textContent = message;
+      statusToast.classList.add("is-visible");
+      window.clearTimeout(toastTimeout);
+      toastTimeout = window.setTimeout(() => statusToast.classList.remove("is-visible"), 2200);
+    };
 
-    </main>
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        const nextState = body.dataset.navOpen !== "true";
+        body.dataset.navOpen = String(nextState);
+        menuToggle.setAttribute("aria-expanded", String(nextState));
+      });
+    }
 
-    <footer>
-        © 2026 Oliver Fussell • Rugby Highlights & Player Profile
-    </footer>
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        body.dataset.navOpen = "false";
+        if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    if (copyEmailButton) {
+      copyEmailButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(emailAddress);
+          showToast("Email copied to clipboard");
+        } catch (error) {
+          window.location.href = "mailto:" + emailAddress;
+        }
+      });
+    }
+
+    if (printPageButton) {
+      printPageButton.addEventListener("click", () => window.print());
+    }
+
+    const revealElements = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14, rootMargin: "0px 0px -30px 0px" });
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const currentId = "#" + entry.target.id;
+          navLinks.forEach((link) => {
+            link.classList.toggle("is-active", link.getAttribute("href") === currentId);
+          });
+        });
+      }, { rootMargin: "-38% 0px -48% 0px", threshold: 0 });
+
+      document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
+    } else {
+      revealElements.forEach((element) => element.classList.add("is-visible"));
+    }
+
+    const year = document.getElementById("year");
+    if (year) year.textContent = String(new Date().getFullYear());
+  </script>
 </body>
 </html>
