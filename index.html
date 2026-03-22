@@ -205,6 +205,46 @@
       flex-wrap: wrap;
     }
 
+    .navTools {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-left: auto;
+    }
+
+    .langSwitch {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .langButton {
+      min-width: 42px;
+      min-height: 38px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      transition: 180ms ease;
+    }
+
+    .langButton:hover,
+    .langButton:focus-visible,
+    .langButton.is-active {
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.12);
+    }
+
     .siteNav a,
     .navCta,
     .menuToggle {
@@ -388,9 +428,10 @@
     .detailValue { color: var(--text); font-weight: 700; }
 
     .heroVisual {
-      position: relative;
       display: grid;
-      place-items: center;
+      align-content: start;
+      justify-items: end;
+      gap: 16px;
     }
 
     .heroPhoto {
@@ -415,11 +456,12 @@
     }
 
     .heroInfoCard {
-      position: absolute;
-      inset: auto auto 20px -10px;
-      width: min(260px, 70vw);
+      position: relative;
+      inset: auto;
+      width: min(340px, 100%);
       padding: 18px;
       border-radius: 24px;
+      margin-left: auto;
     }
 
     .heroInfoCard strong {
@@ -513,6 +555,7 @@
       border: 1px solid rgba(255, 255, 255, 0.08);
       color: var(--text);
       font-weight: 700;
+      line-height: 1.7;
     }
 
     .honoursImage {
@@ -631,7 +674,8 @@
       .contactGrid { grid-template-columns: 1fr; }
       .heroPhoto { width: min(100%, 500px); height: min(78vw, 620px); }
       .strengthGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .heroInfoCard { left: 14px; }
+      .heroVisual { justify-items: start; }
+      .heroInfoCard { margin-left: 0; }
     }
 
     @media (max-width: 960px) {
@@ -664,6 +708,7 @@
 
       .siteNav a { width: 100%; padding: 12px 14px; }
       .navCta { display: none; }
+      .navTools { margin-left: 0; }
       .heroStats,
       .detailGrid,
       .strengthGrid,
@@ -672,6 +717,11 @@
 
     @media (max-width: 720px) {
       .navShell { padding: 14px; }
+      .navTools {
+        width: 100%;
+        justify-content: space-between;
+      }
+      .langSwitch { flex-wrap: wrap; }
       .brandName { font-size: 1.46rem; }
       .heroTitle { font-size: clamp(3.3rem, 16vw, 5.4rem); }
       .heroLead { font-size: 0.98rem; }
@@ -680,8 +730,10 @@
       .strengthGrid,
       .positionGrid,
       .honourGrid { grid-template-columns: 1fr; }
+      .ctaRow > *,
+      .contactGrid .ctaRow > * { width: 100%; }
       .heroPhoto { height: 480px; padding: 12px; }
-      .heroInfoCard { position: relative; inset: auto; width: 100%; margin-top: 16px; }
+      .heroInfoCard { width: 100%; margin-top: 0; }
       .heroVisual { display: block; }
       .surface,
       .statCard,
@@ -736,7 +788,15 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <a class="navCta" href="#contact">Recruiting Contact</a>
+      <div class="navTools">
+        <div class="langSwitch" aria-label="Language selector">
+          <button class="langButton is-active" type="button" data-lang="en">EN</button>
+          <button class="langButton" type="button" data-lang="es">ES</button>
+          <button class="langButton" type="button" data-lang="fr">FR</button>
+          <button class="langButton" type="button" data-lang="it">IT</button>
+        </div>
+        <a class="navCta" href="#contact">Recruiting Contact</a>
+      </div>
     </div>
   </header>
 
@@ -1064,10 +1124,16 @@
           <span class="referenceLabel">Coach Quote</span>
           <h3>Genaro Fessia</h3>
           <p class="referenceQuote">
-            "Ollie is a great team member and a leader on and off the field. He is versatile, agile, powerful,
-            decisive in attack, and very solid in defense."
+            "First of all, Ollie is a great team member, a leader on and off the field with a great human spirit.
+            As a player, he is a very versatile and adaptable athlete, agile and very powerful at the same time.
+            Decisive in attack and with a very solid defense."
           </p>
-          <div class="referencesNote">Head Coach at Belmont Abbey College since 2022. Puma #660 and former professional player.</div>
+          <div class="referencesNote">
+            Argentinian. Head Coach at Belmont Abbey College since 2022. Puma #660 and former professional rugby player.
+            Played for Sale Sharks, London Wasps, and Barbarians RFC, and also competed in the Vodacom Cup.
+            World Rugby Level 2 coach. Coached for 3 years at the Argentinian National Team High Performance Center
+            in the Central Region from 2018 to 2021.
+          </div>
         </article>
 
         <article class="referenceCard reveal">
@@ -1136,84 +1202,6 @@
   </footer>
 
   <div class="statusToast" id="statusToast" aria-live="polite"></div>
-  <script>
-    const body = document.body;
-    const menuToggle = document.querySelector(".menuToggle");
-    const navLinks = document.querySelectorAll(".siteNav a");
-    const statusToast = document.getElementById("statusToast");
-    const copyEmailButton = document.getElementById("copyEmail");
-    const printPageButton = document.getElementById("printPage");
-    const emailAddress = "oliverfussell4@gmail.com";
-    let toastTimeout;
-
-    const showToast = (message) => {
-      if (!statusToast) return;
-      statusToast.textContent = message;
-      statusToast.classList.add("is-visible");
-      window.clearTimeout(toastTimeout);
-      toastTimeout = window.setTimeout(() => statusToast.classList.remove("is-visible"), 2200);
-    };
-
-    if (menuToggle) {
-      menuToggle.addEventListener("click", () => {
-        const nextState = body.dataset.navOpen !== "true";
-        body.dataset.navOpen = String(nextState);
-        menuToggle.setAttribute("aria-expanded", String(nextState));
-      });
-    }
-
-    navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        body.dataset.navOpen = "false";
-        if (menuToggle) menuToggle.setAttribute("aria-expanded", "false");
-      });
-    });
-
-    if (copyEmailButton) {
-      copyEmailButton.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(emailAddress);
-          showToast("Email copied to clipboard");
-        } catch (error) {
-          window.location.href = "mailto:" + emailAddress;
-        }
-      });
-    }
-
-    if (printPageButton) {
-      printPageButton.addEventListener("click", () => window.print());
-    }
-
-    const revealElements = document.querySelectorAll(".reveal");
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.14, rootMargin: "0px 0px -30px 0px" });
-
-      revealElements.forEach((element) => revealObserver.observe(element));
-
-      const sectionObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (!entry.isIntersecting) return;
-          const currentId = "#" + entry.target.id;
-          navLinks.forEach((link) => {
-            link.classList.toggle("is-active", link.getAttribute("href") === currentId);
-          });
-        });
-      }, { rootMargin: "-38% 0px -48% 0px", threshold: 0 });
-
-      document.querySelectorAll("main section[id]").forEach((section) => sectionObserver.observe(section));
-    } else {
-      revealElements.forEach((element) => element.classList.add("is-visible"));
-    }
-
-    const year = document.getElementById("year");
-    if (year) year.textContent = String(new Date().getFullYear());
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
