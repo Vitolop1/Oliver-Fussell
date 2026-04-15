@@ -180,6 +180,8 @@
       box-shadow: 0 16px 36px rgba(0, 0, 0, 0.2);
     }
 
+    .mobileLangSwitch { display: none !important; }
+
     .brand {
       display: flex;
       flex-direction: column;
@@ -324,7 +326,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1.05fr) minmax(340px, 0.95fr);
       gap: 28px;
-      align-items: center;
+      align-items: start;
     }
 
     .heroTitle {
@@ -377,7 +379,7 @@
       gap: 14px;
     }
 
-    .heroStats { grid-template-columns: repeat(4, minmax(0, 1fr)); margin-top: 26px; }
+    .heroStats { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: 26px; align-items: stretch; }
     .detailGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .strengthGrid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
     .positionGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -392,8 +394,17 @@
     .contactCard,
     .filmCard,
     .surface {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
       padding: 24px;
       border-radius: var(--radius-xl);
+    }
+
+    .statCard {
+      min-height: 178px;
+      justify-content: flex-start;
+      gap: 8px;
     }
 
     .metricValue,
@@ -407,6 +418,12 @@
       font-size: clamp(1.8rem, 3vw, 2.3rem);
       line-height: 0.95;
       text-transform: uppercase;
+    }
+
+    .metricValue {
+      display: block;
+      max-width: 100%;
+      overflow-wrap: anywhere;
     }
 
     .metricSub,
@@ -423,29 +440,43 @@
       line-height: 1.7;
     }
 
+    .metricSub { margin-top: auto; }
+
     .detailLabel,
     .contactLabel { color: var(--muted); }
     .detailValue { color: var(--text); font-weight: 700; }
 
     .heroVisual {
       display: grid;
+      width: min(100%, 470px);
+      justify-self: end;
       align-content: start;
-      justify-items: end;
-      gap: 16px;
+      justify-items: stretch;
+      gap: 18px;
     }
 
     .heroPhoto {
-      width: min(100%, 470px);
-      height: min(72vh, 620px);
+      width: 100%;
+      aspect-ratio: 0.78;
+      min-height: 540px;
+      height: auto;
       border-radius: 34px;
       overflow: hidden;
-      padding: 16px;
+      padding: 14px;
       background:
         linear-gradient(180deg, rgba(200, 16, 46, 0.14), rgba(17, 22, 31, 0.22)),
         linear-gradient(180deg, rgba(20, 27, 39, 0.96), rgba(15, 20, 28, 1));
     }
 
-    .heroPhoto img,
+    .heroPhoto img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 18%;
+      border-radius: 22px;
+      background: #171d27;
+    }
+
     .honoursImage img {
       width: 100%;
       height: 100%;
@@ -458,10 +489,10 @@
     .heroInfoCard {
       position: relative;
       inset: auto;
-      width: min(340px, 100%);
-      padding: 18px;
+      width: 100%;
+      min-height: 118px;
+      padding: 22px;
       border-radius: 24px;
-      margin-left: auto;
     }
 
     .heroInfoCard strong {
@@ -672,10 +703,9 @@
       .filmLayout,
       .referenceGrid,
       .contactGrid { grid-template-columns: 1fr; }
-      .heroPhoto { width: min(100%, 500px); height: min(78vw, 620px); }
+      .heroPhoto { width: min(100%, 500px); aspect-ratio: 0.82; min-height: 0; }
       .strengthGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .heroVisual { justify-items: start; }
-      .heroInfoCard { margin-left: 0; }
+      .heroVisual { justify-self: start; }
     }
 
     @media (max-width: 960px) {
@@ -716,13 +746,44 @@
     }
 
     @media (max-width: 720px) {
-      .navShell { padding: 14px; }
-      .navTools {
-        width: 100%;
-        justify-content: space-between;
+      .navShell {
+        width: min(var(--max), calc(100% - 24px));
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
       }
-      .langSwitch { flex-wrap: wrap; }
-      .brandName { font-size: 1.46rem; }
+      .brand {
+        min-width: 0;
+        max-width: calc(100% - 88px);
+        overflow: hidden;
+      }
+      .brandKicker {
+        font-size: 0.58rem;
+        letter-spacing: 0.12em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .menuToggle {
+        min-height: 44px;
+        padding: 9px 12px;
+        font-size: 0.94rem;
+      }
+      .navTools { display: none; }
+      .mobileLangSwitch {
+        display: inline-flex !important;
+        width: max-content;
+        margin-top: 6px;
+      }
+      .brandName {
+        font-size: 1.28rem;
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       .heroTitle { font-size: clamp(3.3rem, 16vw, 5.4rem); }
       .heroLead { font-size: 0.98rem; }
       .heroStats,
@@ -730,11 +791,12 @@
       .strengthGrid,
       .positionGrid,
       .honourGrid { grid-template-columns: 1fr; }
+      .statCard { min-height: 0; }
       .ctaRow > *,
       .contactGrid .ctaRow > * { width: 100%; }
-      .heroPhoto { height: 480px; padding: 12px; }
+      .heroPhoto { width: 100%; min-height: 0; aspect-ratio: 0.76; padding: 12px; }
       .heroInfoCard { width: 100%; margin-top: 0; }
-      .heroVisual { display: block; }
+      .heroVisual { display: block; width: 100%; }
       .surface,
       .statCard,
       .detailCard,
@@ -786,6 +848,12 @@
         <a href="#film">Film</a>
         <a href="#references">References</a>
         <a href="#contact">Contact</a>
+        <div class="langSwitch mobileLangSwitch" aria-label="Mobile language selector">
+          <button class="langButton is-active" type="button" data-lang="en">EN</button>
+          <button class="langButton" type="button" data-lang="es">ES</button>
+          <button class="langButton" type="button" data-lang="fr">FR</button>
+          <button class="langButton" type="button" data-lang="it">IT</button>
+        </div>
       </nav>
 
       <div class="navTools">
